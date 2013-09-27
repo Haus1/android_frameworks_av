@@ -31,6 +31,13 @@
 #include <utils/String8.h>
 #include <cutils/properties.h>
 #include "include/ExtendedUtils.h"
+<<<<<<< HEAD
+=======
+
+#ifdef USE_TI_CUSTOM_DOMX
+#include <OMX_TI_IVCommon.h>
+#endif
+>>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 
 namespace android {
 

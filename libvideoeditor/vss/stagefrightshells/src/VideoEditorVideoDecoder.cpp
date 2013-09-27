@@ -829,9 +829,17 @@ M4OSA_ERR VideoEditorVideoDecoder_configureFromMetadata(M4OSA_Context pContext,
     pDecShellContext->mCropRect.right = cropRight;
     pDecShellContext->mCropRect.top = cropTop;
     pDecShellContext->mCropRect.bottom = cropBottom;
+<<<<<<< HEAD
+=======
 
+#ifdef QCOM_HARDWARE
     width = vWidth;
     height = vHeight;
+#else
+    width = cropRight - cropLeft + 1;
+    height = cropBottom - cropTop + 1;
+#endif
+>>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 
     ALOGV("VideoDecoder_configureFromMetadata : W=%d H=%d", width, height);
     VIDEOEDITOR_CHECK((0 != width) && (0 != height), M4ERR_PARAMETER);

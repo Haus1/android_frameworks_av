@@ -182,7 +182,10 @@ void DataSource::RegisterDefaultSniffers() {
 #else
     RegisterSniffer(SniffWVM);
     RegisterSniffer(ExtendedExtractor::Sniff);
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 
     char value[PROPERTY_VALUE_MAX];
     if (property_get("drm.service.enabled", value, NULL)

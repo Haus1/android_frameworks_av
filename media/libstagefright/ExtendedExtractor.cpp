@@ -32,6 +32,7 @@
 #include <dlfcn.h>  // for dlopen/dlclose
 #include "include/ExtendedExtractor.h"
 
+<<<<<<< HEAD
 #if defined(ENABLE_AV_ENHANCEMENTS) || defined(QCOM_LEGACY_MMPARSER)
 
 namespace android {
@@ -43,6 +44,14 @@ static const char* EXTENDED_EXTRACTOR_CREATE = "createExtractor";
 static const char* EXTENDED_EXTRACTOR_LIB = "libExtendedExtractor.so";
 static const char* EXTENDED_EXTRACTOR_CREATE = "CreateExtractor";
 #endif
+=======
+#ifdef ENABLE_AV_ENHANCEMENTS
+
+namespace android {
+
+static const char* EXTENDED_EXTRACTOR_LIB = "libExtendedExtractor.so";
+static const char* EXTENDED_EXTRACTOR_CREATE = "CreateExtractor";
+>>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 static const char* EXTENDED_EXTRACTOR_SNIFF = "SniffExtendedExtractor";
 
 typedef MediaExtractor* (*ExtendedExtractorCreate)
@@ -100,6 +109,7 @@ MediaExtractor* ExtendedExtractor::Create (
     return extractor;
 }
 
+<<<<<<< HEAD
 #ifdef QCOM_LEGACY_MMPARSER
 void ExtendedExtractor::RegisterSniffers() {
     void *extendedExtractorLib = loadExtendedExtractorLib();
@@ -134,6 +144,8 @@ void ExtendedExtractor::RegisterSniffers() {
 }
 #endif
 
+=======
+>>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 bool ExtendedExtractor::Sniff (
         const sp<DataSource> &source, String8 *mimeType,
         float *confidence,sp<AMessage> *meta) {

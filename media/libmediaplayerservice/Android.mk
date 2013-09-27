@@ -65,6 +65,7 @@ LOCAL_MODULE:= libmediaplayerservice
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS),true)
     LOCAL_CFLAGS += -DENABLE_AV_ENHANCEMENTS
     LOCAL_C_INCLUDES += $(TOP)/frameworks/av/include/media
+<<<<<<< HEAD
     LOCAL_C_INCLUDES += $(TOP)/hardware/qcom/media/mm-core/inc
 endif #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
@@ -72,6 +73,17 @@ ifeq ($(TARGET_BOARD_PLATFORM),msm7x27a)
     LOCAL_CFLAGS += -DUSE_SUBMIT_ONE_INPUT_BUFFER
 endif
 
+=======
+    ifneq ($(TARGET_QCOM_MEDIA_VARIANT),)
+        LOCAL_C_INCLUDES += \
+            $(TOP)/hardware/qcom/media-$(TARGET_QCOM_MEDIA_VARIANT)/mm-core/inc
+    else
+        LOCAL_C_INCLUDES += \
+            $(TOP)/hardware/qcom/media/mm-core/inc
+    endif
+endif #TARGET_ENABLE_QC_AV_ENHANCEMENTS
+
+>>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 include $(BUILD_SHARED_LIBRARY)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))

@@ -74,9 +74,15 @@ const MediaProfiles::NameToTagMap MediaProfiles::sCamcorderQualityNameMap[] = {
     {"fwvga", CAMCORDER_QUALITY_FWVGA},
     {"wvga", CAMCORDER_QUALITY_WVGA},
     {"vga", CAMCORDER_QUALITY_VGA},
+<<<<<<< HEAD
     {"wqvga",CAMCORDER_QUALITY_WQVGA},
     {"4kuhd",CAMCORDER_QUALITY_4kUHD},
     {"4kdci",CAMCORDER_QUALITY_4kDCI},
+=======
+    {"wqvga", CAMCORDER_QUALITY_WQVGA},
+    {"4kuhd", CAMCORDER_QUALITY_4kUHD},
+    {"4kdci", CAMCORDER_QUALITY_4kDCI},
+>>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 
     {"timelapselow",  CAMCORDER_QUALITY_TIME_LAPSE_LOW},
     {"timelapsehigh", CAMCORDER_QUALITY_TIME_LAPSE_HIGH},
