@@ -25,8 +25,6 @@ LOCAL_SRC_FILES:= \
     AudioTrackShared.cpp \
     IAudioFlinger.cpp \
     IAudioFlingerClient.cpp \
-    IDirectTrack.cpp \
-    IDirectTrackClient.cpp \
     IAudioTrack.cpp \
     IAudioRecord.cpp \
     ICrypto.cpp \
@@ -68,6 +66,21 @@ LOCAL_SRC_FILES:= \
     StringArray.cpp
 
 LOCAL_SRC_FILES += ../libnbaio/roundup.c
+
+ifeq ($(BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER),true)
+LOCAL_SRC_FILES+= \
+    AudioParameter.cpp
+endif
+
+ifeq ($(BOARD_USE_SAMSUNG_SEPARATEDSTREAM),true)
+LOCAL_CFLAGS += -DUSE_SAMSUNG_SEPARATEDSTREAM
+endif
+
+ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
+LOCAL_SRC_FILES += \
+    IDirectTrack.cpp \
+    IDirectTrackClient.cpp
+endif
 
 # for <cutils/atomic-inline.h>
 LOCAL_CFLAGS += -DANDROID_SMP=$(if $(findstring true,$(TARGET_CPU_SMP)),1,0)
