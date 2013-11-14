@@ -42,11 +42,7 @@
 #include <media/stagefright/ExtendedCodec.h>
 #include <media/stagefright/OMXCodec.h>
 
-<<<<<<< HEAD
 #if defined(ENABLE_AV_ENHANCEMENTS) || defined(QCOM_LEGACY_MMPARSER)
-=======
-#ifdef ENABLE_AV_ENHANCEMENTS
->>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 
 #include <QCMetaData.h>
 #include <QCMediaDefs.h>

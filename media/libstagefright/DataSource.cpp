@@ -32,7 +32,9 @@
 #include "include/OggExtractor.h"
 #include "include/WAVExtractor.h"
 #include "include/WVMExtractor.h"
+#ifdef QCOM_HARDWARE
 #include "include/ExtendedExtractor.h"
+#endif
 
 #include "matroska/MatroskaExtractor.h"
 
@@ -181,11 +183,10 @@ void DataSource::RegisterDefaultSniffers() {
     ExtendedExtractor::RegisterSniffers();
 #else
     RegisterSniffer(SniffWVM);
+#ifdef QCOM_HARDWARE
     RegisterSniffer(ExtendedExtractor::Sniff);
-<<<<<<< HEAD
 #endif
-=======
->>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
+#endif
 
     char value[PROPERTY_VALUE_MAX];
     if (property_get("drm.service.enabled", value, NULL)

@@ -34,14 +34,11 @@
 namespace android {
 
 class MediaExtractor;
-<<<<<<< HEAD
 #ifdef QCOM_LEGACY_MMPARSER
     typedef void (*SnifferArrayFunc)(const DataSource::SnifferFunc* snifferArray[], int *count);
     static const char* MEDIA_SNIFFER_ARRAY = "snifferArray";
 #endif
 
-=======
->>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 class ExtendedExtractor
 {
 public:
@@ -50,12 +47,9 @@ public:
     static bool Sniff (
             const sp<DataSource> &source, String8 *mimeType,
             float *confidence,sp<AMessage> *meta);
-<<<<<<< HEAD
 #ifdef QCOM_LEGACY_MMPARSER
     static void RegisterSniffers();
 #endif
-=======
->>>>>>> 601e9b5... frameworks/av: Squashed commit of media features from CAF
 };
 
 }  // namespace android
