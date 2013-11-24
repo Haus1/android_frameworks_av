@@ -53,12 +53,6 @@
 #endif
 #include "include/avc_utils.h"
 
-#ifdef ENABLE_AV_ENHANCEMENTS
-#include <QCMediaDefs.h>
-#include <QCMetaData.h>
-#include <QOMX_AudioExtensions.h>
-#endif
-
 #ifdef USE_SAMSUNG_COLORFORMAT
 #include <sec_format.h>
 #endif
