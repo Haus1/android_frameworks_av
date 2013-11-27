@@ -358,6 +358,7 @@ uint32_t OMXCodec::getComponentQuirks(
                 index, "defers-output-buffer-allocation")) {
         quirks |= kDefersOutputBufferAllocation;
     }
+#endif
 #ifdef DOLBY_UDC
     if (list->codecHasQuirk(
                 index, "needs-flush-before-disable")) {
