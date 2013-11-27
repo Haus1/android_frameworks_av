@@ -369,8 +369,6 @@ uint32_t OMXCodec::getComponentQuirks(
     }
 #endif // DOLBY_UDC
 
-    quirks |= ExtendedCodec::getComponentQuirks(list,index);
-
 #ifdef QCOM_HARDWARE
     quirks |= ExtendedCodec::getComponentQuirks(list,index);
 #endif
