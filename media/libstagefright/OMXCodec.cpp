@@ -1649,6 +1649,7 @@ OMXCodec::OMXCodec(
       mNumBFrames(0),
       mInSmoothStreamingMode(false) {
 #else
+              )
                         ? NULL : nativeWindow) {
 #endif
     mPortStatus[kPortIndexInput] = ENABLED;
